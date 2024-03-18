@@ -1,0 +1,17 @@
+app:
+  name: app
+  deployType: single # single, canary, bluegreen
+  replicaCount: 1
+  container:
+    image: add-image-here
+    pullPolicy: Always
+    port: 80
+    config: []
+    env:
+       - key: key
+         value: value
+  service:
+    type: ClusterIP
+    port: 80
+canary:
+  weight: 5
